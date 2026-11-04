@@ -84,7 +84,7 @@ export default class User {
 			throw new Error("User object is locked");
 		this.locked = true;
 		const data = {...this.data};
-		// data.cards = db.array(data.cards);
+		data.upgrades = db.array(data.upgrades);
 		await db`UPDATE users SET ${db(data)} WHERE id=${this.id}`;
 	}
 
