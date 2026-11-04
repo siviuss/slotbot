@@ -8,6 +8,8 @@ export default class User {
 	constructor(id, data) {
 		this.id = Number(id);
 		this.data = data;
+		// fix data
+		if (this.data.upgrades == null) this.data.upgrades = [];
 	}
 
 	static async get(options, create) {
