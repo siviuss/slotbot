@@ -1,37 +1,14 @@
-import { readdir } from "bun:fs/promises";
-import { join, extname } from "bun:path";
-import { fileURLToPath } from "bun:url";
-
 import TelegramBot from '@lib/telegram.js';
 import { sanitize, now } from '@services/util.js';
 import { getValue } from '@services/localstorage.js';
 import db from '@services/database.js';
 import config from '@config';
-import Context from './context.js';
+import importCommands from '@bot/commands.js';
+import Context from '@bot/context.js';
 import { onMessage } from '@bot/events/Message.js';
 import { onCallbackQuery, bindCallbackQuery } from '@bot/events/CallbackQuery.js';
 
-async function importAllFromDir(dir) {
-	const entries = await readdir(dir, { withFileTypes: true });
-	const modules = [];
-
-	for (const entry of entries) {
-		const fullPath = join(dir, entry.name);
-
-		if (entry.isDirectory()) {
-			const nested = await importAllFromDir(fullPath);
-			for (const command of nested) modules.push(command);
-		} else if (entry.isFile() && entry.name.endsWith(".js")) {
-			const command = await import(fullPath);
-			modules.push(command.default);
-		}
-	}
-
-	return modules;
-}
-
-const path = join(fileURLToPath(new URL(".", import.meta.url)), "../commands");
-const commands = await importAllFromDir(path);
+const commands = await importCommands();
 console.log(`Loaded ${commands.length} commands`);
 
 

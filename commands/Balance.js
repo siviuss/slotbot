@@ -3,6 +3,6 @@ export default class {
 
 	static async execute(ctx) {
 		await ctx.reply(`Баланс ${ctx.user.mention}:
-💵 ${ctx.user.data.balance.toLocaleString()}`);
+💵 ${ctx.user.data.money.toLocaleString()}`);
 	}
 }

@@ -3,7 +3,7 @@ export default class {
 
 	static async execute(ctx) {
 		const user = ctx.user;
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return ctx.reply("У вас нету тюленя! Вы можете купить его в магазине с помощью команды <code>-магазин</code>");
 
 		const seal = await user.getSeal();

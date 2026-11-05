@@ -1,4 +1,5 @@
 import db from '@services/database.js';
+import Seal from '@services/seal.js';
 import { sanitize } from '@services/util.js';
 import permissions from '../data/Permissions.json';
 
@@ -88,6 +89,10 @@ export default class User {
 		const data = {...this.data};
 		data.upgrades = db.array(data.upgrades);
 		await db`UPDATE users SET ${db(data)} WHERE id=${this.id}`;
+	}
+
+	async getSeal() {
+		return new Seal(this, await Seal.get(this.id));
 	}
 
 	get link() {

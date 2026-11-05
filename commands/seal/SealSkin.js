@@ -4,7 +4,7 @@ export default class {
 	static trigger = /^-?(тюлень|пчюлень|seal)?( )?скин \d+$/i;
 
 	static async execute(ctx) {
-		if (!ctx.user.upgrades.includes(2))
+		if (!ctx.user.data.upgrades.includes(2))
 			return ctx.reply("У вас нету тюленя! Вы можете купить его в магазине с помощью команды <code>-магазин</code>");
 
 		const args = ctx.arguments;

@@ -57,7 +57,7 @@ function hunt(user, seal, inchat) {
 	let xpboost = 1;
 	if (inchat) { rewards.boosts.push("IN_CHAT"); xpboost += 0.25 };
 	// rewards.boosts.push("SEAL_PEAK"); xpboost += 0.1;
-	if (user.upgrades.indexOf(5) != -1) { rewards.boosts.push("RING_OF_POWER"); xpboost += 2 }
+	if (user.data.upgrades.indexOf(5) != -1) { rewards.boosts.push("RING_OF_POWER"); xpboost += 2 }
 	rewards.xp = Math.floor(rewards.xp * xpboost);
 
 	// apply

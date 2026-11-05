@@ -2,9 +2,9 @@ export default class {
 	static trigger = /^-?(тюлень|пчюлень|seal)?( )?ухудшить (.+?) (\d+)?$/i;
 
 	static async execute(ctx) {
-		if (!ctx.user.upgrades.includes(2))
+		if (!ctx.user.data.upgrades.includes(2))
 			return ctx.reply("У вас нету тюленя! Вы можете купить его в магазине с помощью команды <code>-магазин</code>");
-		if (!ctx.user.upgrades.includes(3))
+		if (!ctx.user.data.upgrades.includes(3))
 			return ctx.reply("У вас нету генератора таблеток! Вы можете купить его в магазине с помощью команды <code>-магазин</code>");
 
 		const args = ctx.body.toLocaleLowerCase().split(" ");

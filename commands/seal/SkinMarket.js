@@ -14,7 +14,7 @@ export default class {
 	static trigger = /^-?(скин )?маркет$/i;
 
 	static async execute(ctx) {
-		if (!ctx.user.upgrades.includes(2))
+		if (!ctx.user.data.upgrades.includes(2))
 			return await ctx.reply("У вас нету тюленя! Вы можете купить его в магазине с помощью команды <code>-магазин</code>");
 
 		const seal = await ctx.user.getSeal();

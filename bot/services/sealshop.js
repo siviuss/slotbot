@@ -18,7 +18,7 @@ shop[1] = {
 
 	tag(user) { return "" },
 	async buy(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		user.data[this.currency] -= this.price * amount;
@@ -28,7 +28,7 @@ shop[1] = {
 		return bought(this, amount);
 	},
 	async sell(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		if (seal.data.fish < amount)
@@ -50,7 +50,7 @@ shop[2] = {
 
 	tag(user) { return "" },
 	async buy(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		user.data[this.currency] -= this.price * amount;
@@ -60,7 +60,7 @@ shop[2] = {
 		return bought(this, amount);
 	},
 	async sell(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		if (seal.data.tfish < amount)
@@ -82,7 +82,7 @@ shop[3] = {
 
 	tag(user) { return "" },
 	async buy(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		user.data[this.currency] -= this.price * amount;
@@ -92,7 +92,7 @@ shop[3] = {
 		return bought(this, amount);
 	},
 	async sell(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		if (seal.data.dfish < amount)
@@ -114,7 +114,7 @@ shop[4] = {
 
 	tag(user) { return "" },
 	async buy(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		user.data[this.currency] -= this.price * amount;
@@ -124,7 +124,7 @@ shop[4] = {
 		return bought(this, amount);
 	},
 	async sell(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		if (seal.data.sfish < amount)
@@ -146,7 +146,7 @@ shop[101] = {
 
 	tag(user) { return "" },
 	async buy(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		user.data[this.currency] -= this.price * amount;
@@ -156,7 +156,7 @@ shop[101] = {
 		return bought(this, amount);
 	},
 	async sell(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		if (seal.data.water < amount)
@@ -180,7 +180,7 @@ shop[102] = {
 	async buy(user, amount) {
 		if (user.data.upgrades.indexOf(1) == -1)
 			return `Вы должны купить доступ к пивной прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		user.data[this.currency] -= this.price * amount;
 		user.data.beer += amount;
@@ -188,7 +188,7 @@ shop[102] = {
 		return bought(this, amount);
 	},
 	async sell(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		if (user.data.beer < amount)
@@ -209,7 +209,7 @@ shop[103] = {
 
 	tag(user) { return "" },
 	async buy(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		user.data[this.currency] -= this.price * amount;
@@ -219,7 +219,7 @@ shop[103] = {
 		return bought(this, amount);
 	},
 	async sell(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		if (seal.data.ienergy < amount)
@@ -241,7 +241,7 @@ shop[104] = {
 
 	tag(user) { return "" },
 	async buy(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		user.data[this.currency] -= this.price * amount;
@@ -251,7 +251,7 @@ shop[104] = {
 		return bought(this, amount);
 	},
 	async sell(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		if (seal.data.coffee < amount)
@@ -273,7 +273,7 @@ shop[105] = {
 
 	tag(user) { return "" },
 	async buy(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		user.data[this.currency] -= this.price * amount;
@@ -283,7 +283,7 @@ shop[105] = {
 		return bought(this, amount);
 	},
 	async sell(user, amount) {
-		if (!user.upgrades.includes(2))
+		if (!user.data.upgrades.includes(2))
 			return `Вы должны купить домашнего тюленя прежде чем покупать <b>${this.icon} ${this.name}</b>!`;
 		const seal = await user.getSeal();
 		if (seal.data.medicine < amount)
