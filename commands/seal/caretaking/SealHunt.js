@@ -23,9 +23,9 @@ const FISH_ICON = [
 ];
 
 const HUNT_MESSAGES = [
-	"⚔️ | Вы с % пошли на охоту в лес...",
-	"🪝 | Вы с % пошли на охоту в море...",
-	"🎣 | Вы с % пошли рыбачить..."
+	"⚔️ Вы с % пошли на охоту в лес...",
+	"🪝 Вы с % пошли на охоту в море...",
+	"🎣 Вы с % пошли рыбачить..."
 ];
 const BOOST_MESSAGE = {
 	IN_CHAT: "+25% опыта за нахождение в чате",
@@ -80,7 +80,7 @@ export default class {
 		// low energy
 		const seal = await user.getSeal();
 		if (seal.data.energy < 30)
-			return ctx.reply(`😴 | Ваш ${seal.nameshort} слишком уставший, и он не может охотится.
+			return ctx.reply(`😴 Ваш ${seal.nameshort} слишком уставший, и он не может охотится.
 (🔋 Уровень энергии упал ниже 30!)`);
 
 		// cooldown

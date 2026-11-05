@@ -5,7 +5,7 @@ const CURRENCY = {
 const shop = {};
 
 shop[1] = {
-	price: 1000, currency: "money",
+	price: 100, currency: "money",
 	icon: "🍻", name: "Доступ пивной",
 	description: "Даёт доступ к пивной, в которой можно купить пиво",
 	type: "upgrade",
@@ -68,7 +68,7 @@ shop[3] = {
 }
 
 shop[4] = {
-	price: 50, currency: "money",
+	price: 500, currency: "money",
 	icon: "🗜", name: "Генератор",
 	description: "Может генерировать и изменять структуру таблеток, для тюленя",
 	type: "upgrade",
@@ -89,7 +89,7 @@ shop[4] = {
 }
 
 shop[5] = {
-	price: 200, currency: "money",
+	price: 2000, currency: "money",
 	icon: "🧰", name: "Верстак",
 	description: "Используется для крафта различных ценных предметов",
 	type: "upgrade",

@@ -26,13 +26,13 @@ export default class {
 		};
 
 		if (stat == null)
-			return ctx.reply("❓ | Неизвестая статистика для отката. Доступные: <code>сила</code>, <code>ловкость</code>, <code>интеллект</code>, <code>выносливость</code>, <code>метаболизм</code>");
+			return ctx.reply("❓ Неизвестая статистика для отката. Доступные: <code>сила</code>, <code>ловкость</code>, <code>интеллект</code>, <code>выносливость</code>, <code>метаболизм</code>");
 		if (seal.data[stat] <= 1)
-			return ctx.reply(`❌ | Вы не можете откатить ${mapped[args[0]]}, поскольку у неё осталось только 1 очко!`)
+			return ctx.reply(`❌ Вы не можете откатить ${mapped[args[0]]}, поскольку у неё осталось только 1 очко!`)
 		seal.data[stat] -= 1;
 		seal.data.credits += 1;
 		seal.save();
 
-		await ctx.reply(`💪 | Вы откатили <b>${mapped[args[0]]}</b> у вашего ${seal.nameno} и получили 🍥 <b>1</b>!`);
+		await ctx.reply(`💪 Вы откатили <b>${mapped[args[0]]}</b> у вашего ${seal.nameno} и получили 🍥 <b>1</b>!`);
 	}
 }

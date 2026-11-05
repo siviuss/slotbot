@@ -1,8 +1,11 @@
 export default class {
-	static trigger = /^-баланс$/i;
+	static trigger = /^-?баланс( @[0-9a-z_]+)?$/i;
 
 	static async execute(ctx) {
-		await ctx.reply(`Баланс ${ctx.user.mention}:
-💵 ${ctx.user.data.money.toLocaleString()}`);
+		const args = ctx.arguments.slice(1);
+		const user = await ctx.getArgumentsUserOrSelf(args);
+
+		await ctx.reply(`Баланс ${user.mention}:
+💵 ${user.data.money.toLocaleString()}`);
 	}
 }

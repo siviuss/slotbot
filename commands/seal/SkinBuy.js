@@ -15,19 +15,19 @@ export default class {
 
 		const seal = await ctx.user.getSeal(); 
 		if (seal.data.skins.indexOf(id) != -1)
-			return ctx.reply("🛍 | У вас уже есть этот скин!");
+			return ctx.reply("🛍 У вас уже есть этот скин!");
 		const skin = SealSkins[id];
 		if (skin.price == null)
-			return ctx.reply("❌ | Этот скин нельзя приобрести.");
+			return ctx.reply("❌ Этот скин нельзя приобрести.");
 		if (ctx.user.data.gem < skin.price)
-			return ctx.reply(`💸 | Вам не хватает 💎 <b>${skin.price - ctx.user.data.gem}</b> для покупки этого скина.`);
+			return ctx.reply(`💸 Вам не хватает 💎 <b>${skin.price - ctx.user.data.gem}</b> для покупки этого скина.`);
 
 		seal.data.skins.push(id);
 		ctx.user.data.gem -= skin.price;
 		await ctx.user.save();
 		await seal.save();
 
-		await ctx.reply(`🛍 | Вы успешно приобрели скин <b>${skin.name}</b>
+		await ctx.reply(`🛍 Вы успешно приобрели скин <b>${skin.name}</b>
 Оденьте его с помощью <code>-скин ${id}</code>`);
 	}
 }

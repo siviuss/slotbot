@@ -45,7 +45,7 @@ export default class {
 		} else if (args[0] == "эффективность") {
 			seal.data.gefficiency += amount;
 		} else {
-			return ctx.reply("❓ | Неизвестая статистика для прокачки. Доступные: <code>голод</code>, <code>жажда</code>, <code>энергия</code>, <code>здоровье</code>, <code>сила</code>, <code>ловкость</code>, <code>интеллект</code>, <code>выносливость</code>, <code>действенность</code>, <code>эффективность</code>");
+			return ctx.reply("❓ Неизвестая статистика для прокачки. Доступные: <code>голод</code>, <code>жажда</code>, <code>энергия</code>, <code>здоровье</code>, <code>сила</code>, <code>ловкость</code>, <code>интеллект</code>, <code>выносливость</code>, <code>действенность</code>, <code>эффективность</code>");
 		}
 		seal.data.gcredits -= amount;
 		await seal.save();
@@ -62,6 +62,6 @@ export default class {
 			"действенность": "💥 Действенность",
 			"эффективность": "🕰 Эффективность"
 		};
-		await ctx.reply(`💪 | Вы вложили 🏵 <b>${amount}</b> в <b>${mapped[args[0]]}</b> таблеток вашего генератора!`);
+		await ctx.reply(`💪 Вы вложили 🏵 <b>${amount}</b> в <b>${mapped[args[0]]}</b> таблеток вашего генератора!`);
 	}
 }

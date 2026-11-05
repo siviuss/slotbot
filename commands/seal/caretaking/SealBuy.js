@@ -14,10 +14,10 @@ export default class {
 
 		const product = sealshop[id];
 		if (product == null)
-			return ctx.reply("❔ | Товар с таким номером не найден, посмотрите доступные по команде <code>-тюлень магазин</code>");
+			return ctx.reply("❔ Товар с таким номером не найден, посмотрите доступные по команде <code>-тюлень магазин</code>");
 		if (product.type == "upgrade") amount = 1;
 		if (product.price * amount > ctx.user.data[product.currency])
-			return ctx.reply(`❌ | Вам не хватает денег для приобретения <b>${product.icon} ${product.name}</b>`);
+			return ctx.reply(`❌ Вам не хватает денег для приобретения <b>${product.icon} ${product.name}</b>`);
 
 		const message = await product.buy(ctx.user, amount);
 		await ctx.reply(message);

@@ -16,18 +16,18 @@ export default class {
 
 		const deal = market.find(k => k.id == dealid);
 		if (deal == null)
-			return ctx.reply("❓ | Сделка с таким номером не найдена.");
+			return ctx.reply("❓ Сделка с таким номером не найдена.");
 		if (deal.user == ctx.user.id)
-			return ctx.reply("❌ | Вы не можете совершить сделку с самим собой.");
+			return ctx.reply("❌ Вы не можете совершить сделку с самим собой.");
 
 		const dealer = await User.fromID(deal.user);
 
 		if (deal.buy) { // dealer buys from caller
 			if (ctx.user.data.gem < deal.gem)
-				return ctx.reply("💎 | У вас не хватает кристаллов для продажи!");
+				return ctx.reply("💎 У вас не хватает кристаллов для продажи!");
 		} else { // dealer sells to caller
 			if (ctx.user.data.money < deal.money)
-				return ctx.reply("💸 | У вас не хватает денег для покупки!");
+				return ctx.reply("💸 У вас не хватает денег для покупки!");
 		}
 
 		// fix: check if delete did anything, to mitigate two players completing the same trade at once
@@ -42,7 +42,7 @@ export default class {
 			ctx.user.data.gem -= deal.gem;
 			await ctx.user.save();
 			await dealer.save();
-			await ctx.reply(`✅ | Вы успешно продали 💎 ${deal.gem} за 💶 ${deal.money.toLocaleString()}`);
+			await ctx.reply(`✅ Вы успешно продали 💎 ${deal.gem} за 💵 ${deal.money.toLocaleString()}`);
 		} else {  // dealer sells to caller
 			//dealer.data.gem -= deal.gem;
 			dealer.data.money += Math.floor(deal.money / 1.1);
@@ -50,7 +50,7 @@ export default class {
 			ctx.user.data.money -= deal.money;
 			await ctx.user.save();
 			await dealer.save();
-			await ctx.reply(`✅ | Вы успешно купили 💎 ${deal.gem} за 💶 ${deal.money.toLocaleString()}`);
+			await ctx.reply(`✅ Вы успешно купили 💎 ${deal.gem} за 💵 ${deal.money.toLocaleString()}`);
 		}
 	}
 }

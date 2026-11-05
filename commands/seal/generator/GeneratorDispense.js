@@ -13,7 +13,7 @@ export default class {
 		await seal.tick(ctx);
 		const cd = seal.data.gencooldown - now();
 		if (cd > 0)
-			return ctx.reply(`❌ | Диспенсер ещё не готов! Приходите за таблеткой через <b>${formatTime(cd)}</b>`);
+			return ctx.reply(`❌ Диспенсер ещё не готов! Приходите за таблеткой через <b>${formatTime(cd)}</b>`);
 
 		const pills = Math.floor(Math.random() * 3 + seal.pillEfficiency);
 		seal.data.gencooldown = now() + 3600;
@@ -21,6 +21,6 @@ export default class {
 		await seal.save();
 		await ctx.user.save();
 
-		await ctx.reply(`🗜 | Вы использовали диспенсер и получили <b>+${pills} Таблеток</b> 💊`);
+		await ctx.reply(`🗜 Вы использовали диспенсер и получили <b>+${pills} Таблеток</b> 💊`);
 	}
 }

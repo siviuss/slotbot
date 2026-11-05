@@ -11,7 +11,7 @@ export default class {
 		const seal = await ctx.user.getSeal();
 
 		if (seal.data.credits <= 0)
-			return ctx.reply(`❌ | У вас нехватает 🍥 Кредитов!\nПолучите их прокачивая уровень вашего ${seal.name}, например на охоте.`);
+			return ctx.reply(`❌ У вас нехватает 🍥 Кредитов!\nПолучите их прокачивая уровень вашего ${seal.name}, например на охоте.`);
 		
 		if (args[0] == "сила") {
 			seal.data.strength += 1;
@@ -24,7 +24,7 @@ export default class {
 		} else if (args[0] == "метаболизм") {
 			seal.data.metabolism += 1;
 		} else {
-			return ctx.reply("❓ | Неизвестая статистика для прокачки. Доступные: <code>сила</code>, <code>ловкость</code>, <code>интеллект</code>, <code>выносливость</code>, <code>метаболизм</code>");
+			return ctx.reply("❓ Неизвестая статистика для прокачки. Доступные: <code>сила</code>, <code>ловкость</code>, <code>интеллект</code>, <code>выносливость</code>, <code>метаболизм</code>");
 		}
 		seal.data.credits -= 1;
 		await seal.save();
@@ -36,6 +36,6 @@ export default class {
 			"выносливость": "выносливость",
 			"метаболизм": "метаболизм"
 		};
-		await ctx.reply(`💪 | Вы вложили 🍥 <b>1</b> в <b>${mapped[args[0]]}</b> вашего ${seal.nameno}!`);
+		await ctx.reply(`💪 Вы вложили 🍥 <b>1</b> в <b>${mapped[args[0]]}</b> вашего ${seal.nameno}!`);
 	}
 }

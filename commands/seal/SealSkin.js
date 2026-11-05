@@ -17,10 +17,10 @@ export default class {
 
 		const seal = await ctx.user.getSeal();
 		if (seal.data.skins.indexOf(id) == -1)
-			return ctx.reply("❌ | У вас нету этого скина! Приобрести скины можно в <code>-скин маркет</code>");
+			return ctx.reply("❌ У вас нету этого скина! Приобрести скины можно в <code>-скин маркет</code>");
 		seal.data.skin = id;
 		await seal.save();
 
-		await ctx.reply(`🎭 | Вы одели скин <b>${SealSkins[id].name}</b> вашему тюленю`);
+		await ctx.reply(`🎭 Вы одели скин <b>${SealSkins[id].name}</b> вашему тюленю`);
 	}
 }

@@ -17,16 +17,16 @@ export default class {
 
 		const sellgems = Math.floor(gems * 100) / 100;
 		if (sellgems > ctx.user.data.gem)
-			return ctx.reply(`💎 | У вас не хватает кристаллов для продажи!`);
+			return ctx.reply(`💎 У вас не хватает кристаллов для продажи!`);
 		if (sellgems < 1)
-			return ctx.reply(`💎 | Количество кристаллов для покупки должно быть не менее 1!`);
+			return ctx.reply(`💎 Количество кристаллов для покупки должно быть не менее 1!`);
 
 		ctx.user.data.gem -= sellgems;
 		await ctx.user.save();
 		await putMarket(ctx.user.id, sellgems, money, false);
 
 		await ctx.reply(`🛍 Вы разместили кристаллы на продажу в гем маркет.
-💶 ${money.toLocaleString()} <b>→</b> 💎 ${sellgems}
+💵 ${money.toLocaleString()} <b>→</b> 💎 ${sellgems}
 Ожидайте пока кто-нибудь соглаится совершить сделку (после продажи будет оплачена комиссия 10%).
 🕔 Если не найдётся покупатель за <b>7 дней</b> после размещения, сделка будет удалена!`);
 	}

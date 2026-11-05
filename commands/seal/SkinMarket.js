@@ -21,7 +21,7 @@ export default class {
 		const market = SealSkins.filter(k => k.price != null || seal.data.skins.indexOf(k.id) != -1)
 			.map(k => marketMap(seal, k));
 
-		await ctx.reply(`🛍 | <b>Маркет скинов тюленя</b>
+		await ctx.reply(`🛍 <b>Маркет скинов тюленя</b>
 <code>-скин купить &lt;номер&gt;</code> чтобы купить скин
 💡 Подсказка: Номер скина находится в скобках рядом со скином! Например: [ID: 1] это номер 1
 \n${market.join("\n")}`);

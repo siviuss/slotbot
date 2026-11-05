@@ -48,13 +48,13 @@ export default class {
 		};
 
 		if (stat == null)
-			return ctx.reply("❓ | Неизвестая статистика для ухудшения. Доступные: <code>голод</code>, <code>жажда</code>, <code>энергия</code>, <code>здоровье</code>, <code>сила</code>, <code>ловкость</code>, <code>интеллект</code>, <code>выносливость</code>");
+			return ctx.reply("❓ Неизвестая статистика для ухудшения. Доступные: <code>голод</code>, <code>жажда</code>, <code>энергия</code>, <code>здоровье</code>, <code>сила</code>, <code>ловкость</code>, <code>интеллект</code>, <code>выносливость</code>");
 		if (seal.data[stat] < amount)
-			return ctx.reply(`❌ | Вы не можете ухудшить ${mapped[args[0]]}, поскольку у неё не останется очков!`)
+			return ctx.reply(`❌ Вы не можете ухудшить ${mapped[args[0]]}, поскольку у неё не останется очков!`)
 		seal.data[stat] -= amount;
 		seal.data.gcredits += amount;
 		await seal.save();
 
-		await ctx.reply(`💪 | Вы ухудшили <b>${mapped[args[0]]}</b> и получили 🏵 <b>${amount}</b> для вашего генератора!`);
+		await ctx.reply(`💪 Вы ухудшили <b>${mapped[args[0]]}</b> и получили 🏵 <b>${amount}</b> для вашего генератора!`);
 	}
 }

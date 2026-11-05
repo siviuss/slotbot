@@ -105,7 +105,7 @@ export default class {
 		
 		const feed = mapped[(args[0] ?? "").substring(0, 3)];
 		if (feed == null)
-			return ctx.reply(`❓ | Неизвестная еда. Доступные виды еды:
+			return ctx.reply(`❓ Неизвестная еда. Доступные виды еды:
 <code>рыба</code>, <code>тропическая</code>, <code>дельфин</code>, <code>акула</code>, <code>вода</code>, <code>пиво</code>, <code>энергетик</code>, <code>кофе</code>, <code>медицина</code>, <code>таблетка</code>`);
 
 		const diff = seal.data.feedcooldown - now();
@@ -120,9 +120,9 @@ export default class {
 		if (success) {
 			seal.data.feedcooldown = now() + Math.floor(600 / seal.data.metabolism);
 			seal.save();
-			await ctx.reply(`😋 | Вы накормили своего ${seal.nameno} <b>${name}</b>`);
+			await ctx.reply(`😋 Вы накормили своего ${seal.nameno} <b>${name}</b>`);
 		} else {
-			await ctx.reply(`❌ | Вам не хватает <b>${name}</b> чтобы покормить ${seal.nameno}`);
+			await ctx.reply(`❌ Вам не хватает <b>${name}</b> чтобы покормить ${seal.nameno}`);
 		}
 	}
 }

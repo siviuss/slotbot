@@ -22,7 +22,7 @@ export default class {
 		if (item.sell != null) {
 			await ctx.reply(await item.sell(ctx.user, quantity));
 		} else {
-			await ctx.reply("❌ | Вы не можете продать данный предмет!");
+			await ctx.reply("❌ Вы не можете продать данный предмет!");
 		}
 	}
 }

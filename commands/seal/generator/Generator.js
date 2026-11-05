@@ -33,8 +33,8 @@ export default class {
 <b>База</b>
 💫 Уровень • <b>${Math.floor(seal.data.glevel)}</b>
 🏵 Жетоны • <b>${seal.data.gcredits.toLocaleString()}</b>
-💸 Инвестировано • 💶 <b>${seal.data.ginvested.toLocaleString()}</b>
-┗ До следующего уровня: 💶 <b>${goal.toLocaleString()}</b>
+💸 Инвестировано • 💵 <b>${seal.data.ginvested.toLocaleString()}</b>
+┗ До следующего уровня: 💵 <b>${goal.toLocaleString()}</b>
 💥 Действенность • <b>${seal.data.gpotency.toLocaleString()} (${formatTime(seal.pillPotency)})</b>
 🕰 Эффективность • <b>${seal.data.gefficiency.toLocaleString()} (${seal.pillEfficiency-1}–${seal.pillEfficiency+2} таб.)</b>
 

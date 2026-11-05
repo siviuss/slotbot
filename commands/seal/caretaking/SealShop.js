@@ -2,7 +2,7 @@ import sealshop from '@services/sealshop.js';
 
 const CURRENCY = {
 	coins: "🪙",
-	money: "💶",
+	money: "💵",
 	gpills: "💊"
 };
 
@@ -16,7 +16,7 @@ function shopgen(user) {
 		text += `[ID: ${id}] ${mark}<b>${entry.icon} ${entry.name}</b> - Цена: ${currency} ${price}\n`;
 		text += `┗ ${entry.description}\n`;
 	}
-	return `🛒 | <b>Магазин для тюленей</b>
+	return `🛒 <b>Магазин для тюленей</b>
 <code>-тюлень купить &lt;номер&gt; &lt;количество&gt;</code> чтобы купить предмет
 <code>-тюлень продать &lt;номер&gt; &lt;количество&gt;</code> чтобы продать предмет за полцены
 💡 Подсказка: Номер предмета находится в скобках рядом с предметом! Например: [ID: 1] это номер 1

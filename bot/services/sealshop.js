@@ -1,14 +1,13 @@
 const CURRENCY = {
-	coins: "🪙",
-	money: "💶",
+	money: "💵",
 	gpills: "💊"
 };
 const SELL_COEFFICIENT = 0.5;
 
 const shop = {};
 
-const bought = (item, amount) => `✅ | Вы успешно приобрели <b>${item.icon} ${item.name}</b> за <b>${CURRENCY[item.currency]} ${(item.price * amount).toLocaleString()}</b>`;
-const sold = (item, sell) => `✅ | Вы успешно продали <b>${item.icon} ${item.name}</b> за <b>${CURRENCY[item.currency]} ${sell.toLocaleString()}</b>`;
+const bought = (item, amount) => `✅ Вы успешно приобрели <b>${item.icon} ${item.name}</b> за <b>${CURRENCY[item.currency]} ${(item.price * amount).toLocaleString()}</b>`;
+const sold = (item, sell) => `✅ Вы успешно продали <b>${item.icon} ${item.name}</b> за <b>${CURRENCY[item.currency]} ${sell.toLocaleString()}</b>`;
 
 shop[1] = {
 	price: 3, currency: "money",

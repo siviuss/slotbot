@@ -1,7 +1,7 @@
 import shop from '@services/shop.js';
 
 export default class {
-	static trigger = /^-купить \d+( \d+)?$/i;
+	static trigger = /^-?купить \d+( \d+)?$/i;
 
 	static async execute(ctx) {
 		const args = ctx.arguments.slice(1);

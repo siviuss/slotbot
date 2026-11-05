@@ -24,9 +24,9 @@ export default class {
 
 		const amount = parseInt(args[0]);
 		if (amount == null || isNaN(amount) || amount <= 0)
-			return ctx.reply("💸 | Введите корректное число денег для инвестиции.");
+			return ctx.reply("💸 Введите корректное число денег для инвестиции.");
 		if (ctx.user.data.money < amount)
-			return ctx.reply("💸 | Вам не хватает денег для инвестиции.");
+			return ctx.reply("💸 Вам не хватает денег для инвестиции.");
 
 		seal.data.ginvested += amount;
 		ctx.user.data.money -= amount;
@@ -41,6 +41,6 @@ export default class {
 
 		await seal.save();
 		await ctx.user.save();
-		await ctx.reply(`🗜️ | Вы инвестировали 💶 <b>${amount.toLocaleString()}</b> и получили 🏵 <b>${creditsgain}</b>`);
+		await ctx.reply(`🗜️ Вы инвестировали 💵 <b>${amount.toLocaleString()}</b> и получили 🏵 <b>${creditsgain}</b>`);
 	}
 }

@@ -58,9 +58,9 @@ export default class {
 
 		const seal = await ctx.user.getSeal();
 		if (seal.data.level < 7)
-			return ctx.reply(`❌ | Ваш ${seal.nameshort} недостаточно опытный, чтобы идти в шахту! Требуется <b>7 уровень</b>.`);
+			return ctx.reply(`❌ Ваш ${seal.nameshort} недостаточно опытный, чтобы идти в шахту! Требуется <b>7 уровень</b>.`);
 		if (seal.data.energy < 30)
-			return ctx.reply(`😵 | Ваш ${seal.nameshort} слишком уставший, и он не может идти в шахту.
+			return ctx.reply(`😵 Ваш ${seal.nameshort} слишком уставший, и он не может идти в шахту.
 <blockquote>🔋 Уровень энергии упал ниже 30!</blockquote>`);
 
 		const diff = seal.data.minecooldown - now();
@@ -77,7 +77,7 @@ export default class {
 		await seal.save();
 		await ctx.user.save();
 
-		let message = `⛏️ | Вы пошли копать в шахту вместе с ${seal.namewith}...`;
+		let message = `⛏️ Вы пошли копать в шахту вместе с ${seal.namewith}...`;
 		if (rewards.battle) {
 			message += "\n⚔️ На вас напал пещерный монстр и ";
 			if (rewards.escape) {
