@@ -47,7 +47,7 @@ export default async function importCommands() {
 		const command = collection[i];
 		const commandName = entry.replace(".js", "");
 		validate(command.default, commandName);
-		command.default.commandName = commandName;
+		command.default.constructor.commandName = commandName;
 		commands.push(command.default);
 	}
 	return commands;

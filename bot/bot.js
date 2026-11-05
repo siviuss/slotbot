@@ -47,6 +47,8 @@ bot.on("message", async (message) => {
 		if (message.is_from_offline && command.is_protected) continue;
 
 		try {
+			const chattype = message.chat.id == -1004464732014 ? "official" : (message.chat.type == "private" ? "private" : "foreign")
+			console.log(`@${context.author.id} used command ${command.constructor.commandName} in ${chattype} chat`);
 			await command.execute(context);
 		} catch (e) {
 			console.error(e);
