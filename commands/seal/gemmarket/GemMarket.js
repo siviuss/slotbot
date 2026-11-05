@@ -9,7 +9,7 @@ export default class {
 
 // <code>-гем купить &lt;гемы&gt; &lt;цена&gt;</code> чтобы сделать ставку покупки гемов
 // <code>-гем продать &lt;гемы&gt; &lt;цена&gt;</code> чтобы сделать ставку продажи гемов
-		let message = `🏦 <b>Гем Маркет Kreeper Cards</b>
+		let message = `🏦 <b>Гем Маркет SlotBot</b>
 <code>-гем сделка &lt;номер&gt;</code> чтобы совершить сделку купле-продажи
 \n`;
 		const deals = []
